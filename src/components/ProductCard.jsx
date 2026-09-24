@@ -3,7 +3,6 @@ import { addToCart } from '../services/cartService'
 
 function ProductCard({ product }) {
   const navigate = useNavigate()
-
   async function handleAddToCart() {
     const token = localStorage.getItem('token')
 
@@ -14,7 +13,6 @@ function ProductCard({ product }) {
       navigate('/login')
       return
     }
-
     try {
       await addToCart(product.id, 1)
       alert(`${product.name} added to cart!`)
@@ -38,7 +36,6 @@ function ProductCard({ product }) {
       </div>
 
       <div className="product-card-content">
-
         <span className="product-card-category">
           Product
         </span>
@@ -50,13 +47,11 @@ function ProductCard({ product }) {
         </p>
 
         <div className="product-card-bottom">
-
           <p className="product-price">
             ₹{product.price.toLocaleString('en-IN')}
           </p>
 
           <div className="product-card-actions">
-
             <button
               className="view-details-button"
               onClick={handleViewDetails}
@@ -70,13 +65,9 @@ function ProductCard({ product }) {
             >
               Add to Cart
             </button>
-
           </div>
-
         </div>
-
       </div>
-
     </article>
   )
 }
